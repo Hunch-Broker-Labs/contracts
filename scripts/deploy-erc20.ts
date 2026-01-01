@@ -13,10 +13,6 @@ async function main() {
   const deployer = new ethers.Wallet(process.env.PRIVATE_KEY, provider);
   
   console.log("Deploying TestERC20 with account:", deployer.address);
-  if(deployer.address !== "0xe7D463DFf4E8c01040DafD137598d006292A7Aa3") {
-    console.log("Account is not the deployer, skipping deployment");
-    return;
-  }
   
   // Fund the account if needed (for hardhat network)
   const network = await provider.getNetwork();
